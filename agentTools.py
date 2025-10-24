@@ -78,6 +78,31 @@ def search(query: str) -> str:
     # print(store_info)
     return str(store_info)
 
+# I would like to figure out how to get the agent to ask the user questions when it needs more information.
+# This does not seem to be the method...
+# @tool
+# def ask_user_question(question: str) -> str:
+#     """ A tool to ask the user a question and get their input.
+
+#     Args:
+#         question (str): The question to ask the user.
+#     Returns:
+#         str: The user's input.
+#     """
+#     return input(question)
+
+
+@tool
+def route_distance_calculator(distances: list[float]) -> float:
+    """ A tool to calculate the total distance of a route given a list of distances between locations.
+
+    Args:
+        distances (list[float]): A list of distances between locations.
+
+    Returns:
+        float: The total distance of the route.
+    """
+    return sum(distances)
 
 def retrieve_prev_queries() -> str:
     sql: str = "SELECT * FROM PreviousQueries LIMIT 10;"
