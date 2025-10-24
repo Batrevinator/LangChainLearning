@@ -1,9 +1,17 @@
-In an effort to learn a little more about modern AI frameworks I am using this repo as a sort of sandbox in which I can experiment with LangChain.
+## Project README — LangChain Store Finder
 
-I am going to try to use LangChain to interface with a VERY simple database with information about stores. The system can be used to then look up information pertaining to these stores.
+### Summary
+A small sandbox project for me to learn how to use LangChain to build an assistant that queries a simple stores database and recommends where to buy items based on criteria such as price, time, or distance.
 
-The hope is to make the AI agent produce suggestion for where to purchase each item on a shopping list to maximize a given resource \(time, money, distance traveled)
+### Key Features
+- Natural language interface for shopping queries (e.g., "cheapest place to buy apples, show me three options")
+- Simple store/inventory database backend for lookups
+- Scoring and ranking by user-selected metrics (price, distance, time)
+- Extensible agent pipeline using LangChain primitives
 
-So far the system is able to take a user's simple prosaic input such as "I want to find the cheapest place to buy apples, show me three options" and query the database based off of this request.
-
-Based on the output, the agent will provide guidance.
+### Usage Example
+- Example user prompt:
+  ```
+  "Find the three cheapest places to buy apples within 10 miles."
+  ```
+- The agent parses the request, queries the store DB, ranks results, and returns a short list with prices and distances.
