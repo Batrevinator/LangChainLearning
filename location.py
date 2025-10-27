@@ -10,3 +10,7 @@ class Location:
     
     def addNeighbor(self, neighbor_location: "Location", distance: float):
         self.neigbors[neighbor_location] = distance
+        neighbor_location.neigbors[self] = distance
+        
+    def getNeighbors(self):
+        return self.neigbors
